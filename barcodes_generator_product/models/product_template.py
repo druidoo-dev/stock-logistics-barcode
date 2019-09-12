@@ -1,3 +1,5 @@
+# Copyright (C) 2019-Today: La Louve (<https://cooplalouve.fr>)
+# Copyright (C) 2019-Today: Druidoo (<https://www.druidoo.io>)
 # Copyright (C) 2014-Today GRAP (http://www.grap.coop)
 # Copyright (C) 2016-Today La Louve (http://www.lalouve.net)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
@@ -15,11 +17,11 @@ class ProductTemplate(models.Model):
     # Related to display product product information if is_product_variant
     barcode_rule_id = fields.Many2one(
         related='product_variant_ids.barcode_rule_id',
-        string='Barcode Rule', comodel_name='barcode.rule')
+        string='Barcode Rule', comodel_name='barcode.rule', readonly=False)
 
     barcode_base = fields.Integer(
         related='product_variant_ids.barcode_base',
-        string='Barcode Base')
+        string='Barcode Base', readonly=False)
 
     generate_type = fields.Selection(
         string='Generate Type', selection=_GENERATE_TYPE, readonly=True,

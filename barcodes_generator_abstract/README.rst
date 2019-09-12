@@ -132,6 +132,7 @@ Images
 Contributors
 ------------
 
+* Druidoo (https://www.druidoo.io)
 * Sylvain LE GAL (https://twitter.com/legalsylvain)
 * Dave Lasley <dave@laslabs.com>
 

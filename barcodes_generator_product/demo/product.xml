@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+Copyright (C) 2019-Today: La Louve (<https://cooplalouve.fr>)
+Copyright (C) 2019-Today: Druidoo (<https://www.druidoo.io>)
 Copyright (C) 2016-Today: GRAP (http://www.grap.coop)
 Copyright (C) 2016-Today La Louve (http://www.lalouve.net)
 @author Sylvain LE GAL (https://twitter.com/legalsylvain)
@@ -17,7 +19,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="product_template_multi_variant" model="product.template">
         <field name="name">Template with Generated Barcode (Multi Variant)</field>
         <field name="barcode_rule_id" ref="product_generated_barcode" />
-        <field name="attribute_line_ids" eval="[(6,0,[ref('product.product_attribute_2')])]"/>
     </record>
 
     <record id="product_product_variant_1" model="product.product">

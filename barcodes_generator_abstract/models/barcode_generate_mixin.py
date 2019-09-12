@@ -7,7 +7,7 @@
 import logging
 
 from odoo import _, api, exceptions, fields, models
-
+from odoo.exceptions import Warning
 from .barcode_rule import _GENERATE_TYPE
 
 _logger = logging.getLogger(__name__)
@@ -56,6 +56,8 @@ class BarcodeGenerateMixin(models.AbstractModel):
                     "Generate Base can be used only with barcode rule with"
                     " 'Generate Type' set to 'Base managed by Sequence'"))
             else:
+                if not item.barcode_rule_id.sequence_id:
+                    raise Warning('Sequence is not configured in Barcode Rule!')
                 item.barcode_base =\
                     item.barcode_rule_id.sequence_id.next_by_id()
 
